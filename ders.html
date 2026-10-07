@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#B9372A"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><link rel="icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#B9372A"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png">
 <style>.back{display:inline-block;margin-bottom:10px;font-family:var(--f-mono);font-size:12px;color:var(--accent);text-decoration:none}.back:hover{text-decoration:underline}</style>
 <title>Magyar Óra Füzeti</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,6 +137,8 @@ select.us{width:auto;max-width:min(360px,100%);font:inherit;font-size:14px;paddi
 @media (prefers-reduced-motion:reduce){.card .in{transition:none}}
 @media (max-width:760px){.unit,.reading,.quiz{padding:16px}.ex{grid-template-columns:minmax(0,1fr)}.ex dd{margin-bottom:6px}}
 </style>
+<script>if(location.search.indexOf('embed')>-1)document.documentElement.classList.add('embed');</script>
+<style>.embed header.top,.embed .back{display:none}.embed .wrap{padding-block:0 24px;padding-inline:0}.embed .mainnav{margin-top:0}</style>
 </head><body><div class="wrap"><a class="back" href="./">← Magyar Füzet</a>
 
   <header class="top">
@@ -290,4 +292,4 @@ let sv='akis';try{sv=localStorage.getItem('mo-view')||'akis'}catch(e){}
 if(location.hash==='#arsiv'||(location.hash&&byDay[location.hash.slice(1)]))sv='arsiv';
 show(['akis','oku','kart','test','arsiv'].includes(sv)?sv:'akis');
 </script>
-<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script></body></html>
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script><script>if(window.parent!==window){const p=()=>parent.postMessage({mfH:document.documentElement.scrollHeight},'*');new ResizeObserver(p).observe(document.body);addEventListener('load',p);document.addEventListener('click',()=>setTimeout(p,50));}</script></body></html>
